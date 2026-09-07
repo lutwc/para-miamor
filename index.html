@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Te amo ♡</title>
+
+<style>
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext x='3' y='25' font-size='24' fill='%23ff8fa3'%3E%E2%99%A5%3C/text%3E%3C/svg%3E"), auto;
+
+    background:
+      radial-gradient(circle at 15% 15%, rgba(255,255,255,.12), transparent 22%),
+      radial-gradient(circle at 85% 80%, rgba(255,180,180,.10), transparent 25%),
+      linear-gradient(135deg, #8f1d2c, #b93647 48%, #761524);
+
+    color: #fff7f5;
+
+    padding: 55px 20px;
+
+    position: relative;
+
+    overflow-x: hidden;
+  }
+
+
+  /* =====================================================
+     💗 CORAZONES Y BRILLITOS DEL FONDO
+     ===================================================== */
+
+  .falling-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+
+  .falling {
+    position: absolute;
+    top: -50px;
+
+    color: #ff9fb5;
+
+    font-size: 22px;
+
+    opacity: 0;
+
+    animation: caer linear forwards;
+
+    user-select: none;
+
+    text-shadow:
+      0 0 8px rgba(255, 150, 180, .35);
+  }
+
+
+  .sparkle {
+    position: absolute;
+    top: -30px;
+
+    color: #ffd9e2;
+
+    font-size: 12px;
+
+    opacity: 0;
+
+    animation: caerBrillito linear forwards;
+
+    text-shadow:
+      0 0 10px rgba(255, 220, 230, .8);
+  }
+
+
+  @keyframes caer {
+
+    0% {
+      transform:
+        translateY(-60px)
+        translateX(0)
+        rotate(0deg);
+
+      opacity: 0;
+    }
+
+    10% {
+      opacity: .75;
+    }
+
+    50% {
+      transform:
+        translateY(50vh)
+        translateX(35px)
+        rotate(180deg);
+    }
+
+    90% {
+      opacity: .7;
+    }
+
+    100% {
+      transform:
+        translateY(115vh)
+        translateX(-25px)
+        rotate(360deg);
+
+      opacity: 0;
+    }
+  }
+
+
+  @keyframes caerBrillito {
+
+    0% {
+      transform:
+        translateY(-30px)
+        rotate(0deg)
+        scale(.6);
+
+      opacity: 0;
+    }
+
+    15% {
+      opacity: .8;
+    }
+
+    50% {
+      transform:
+        translateY(50vh)
+        translateX(25px)
+        rotate(180deg)
+        scale(1);
+    }
+
+    90% {
+      opacity: .5;
+    }
+
+    100% {
+      transform:
+        translateY(110vh)
+        translateX(-20px)
+        rotate(360deg)
+        scale(.5);
+
+      opacity: 0;
+    }
+  }
+
+
+  /* =====================================================
+     💌 CONTENIDO PRINCIPAL
+     ===================================================== */
+
+  .page {
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+      aparecerPagina 1.4s ease-out;
+  }
+
+
+  @keyframes aparecerPagina {
+
+    from {
+      opacity: 0;
+
+      transform:
+        translateY(25px)
+        scale(.97);
+    }
+
+    to {
+      opacity: 1;
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+  }
+
+
+  .card {
+    background: rgba(65, 8, 18, .48);
+
+    border: 1px solid rgba(255,255,255,.22);
+
+    border-radius: 28px;
+
+    padding: clamp(30px, 6vw, 65px);
+
+    box-shadow:
+      0 20px 60px rgba(40, 0, 8, .35);
+
+    backdrop-filter: blur(7px);
+  }
+
+
+  .little {
+    text-align: center;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    font-size: 12px;
+
+    opacity: .78;
+
+    margin-bottom: 12px;
+  }
+
+
+  h1 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: clamp(60px, 14vw, 130px);
+
+    line-height: .9;
+
+    letter-spacing: 5px;
+
+    font-weight: 700;
+
+    text-shadow:
+      0 5px 25px rgba(50,0,5,.35);
+
+    animation:
+      tituloBrilla 3s ease-in-out infinite;
+  }
+
+
+  @keyframes tituloBrilla {
+
+    0%, 100% {
+      text-shadow:
+        0 5px 25px rgba(50,0,5,.35);
+    }
+
+    50% {
+      text-shadow:
+        0 5px 30px rgba(255,170,190,.35);
+    }
+  }
+
+
+  .heart {
+    text-align: center;
+
+    font-size: 30px;
+
+    margin: 20px 0 30px;
+
+    animation:
+      beat 1.7s infinite ease-in-out;
+  }
+
+
+  @keyframes beat {
+
+    0%, 100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.18);
+    }
+  }
+
+
+  /* =====================================================
+     🎵 BOTÓN DE MÚSICA
+     ===================================================== */
+
+  .music-button {
+    display: block;
+
+    margin: 0 auto 38px;
+
+    padding: 13px 25px;
+
+    border:
+      1px solid rgba(255,255,255,.35);
+
+    border-radius: 50px;
+
+    background:
+      rgba(255,255,255,.12);
+
+    color: #fff7f5;
+
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext x='3' y='25' font-size='24' fill='%23ff8fa3'%3E%E2%99%A5%3C/text%3E%3C/svg%3E"), pointer;
+
+    transition: .3s ease;
+
+    box-shadow:
+      0 5px 20px rgba(0,0,0,.15);
+  }
+
+
+  .music-button:hover {
+    background:
+      rgba(255,255,255,.22);
+
+    transform:
+      translateY(-2px);
+  }
+
+
+  .music-button:active {
+    transform:
+      scale(.96);
+  }
+
+
+  .music-button.playing {
+    animation:
+      musicaPulso 1.4s infinite ease-in-out;
+  }
+
+
+  @keyframes musicaPulso {
+
+    0%, 100% {
+      box-shadow:
+        0 5px 20px rgba(0,0,0,.15);
+
+      transform: scale(1);
+    }
+
+    50% {
+      box-shadow:
+        0 5px 28px rgba(255,160,180,.4);
+
+      transform: scale(1.04);
+    }
+  }
+
+
+  /* =====================================================
+     💌 CARTA
+     ===================================================== */
+
+  .message {
+    margin: 0 auto;
+
+    max-width: 700px;
+
+    font-size:
+      clamp(17px, 2.4vw, 20px);
+
+    line-height: 1.9;
+
+    text-align: left;
+  }
+
+
+  .message p {
+    margin:
+      0 0 25px;
+  }
+
+
+  .signature {
+    margin-top: 42px;
+
+    text-align: right;
+
+    font-size: 22px;
+
+    font-style: italic;
+  }
+
+
+  .divider {
+    width: 90px;
+
+    height: 1px;
+
+    background:
+      rgba(255,255,255,.5);
+
+    margin:
+      38px auto;
+  }
+
+
+  /* =====================================================
+     🐱 GIF
+     ===================================================== */
+
+  .gif-container {
+    text-align: center;
+
+    margin:
+      30px auto 10px;
+
+    position: relative;
+  }
+
+
+  .gif-container img {
+    display: block;
+
+    max-width: 280px;
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 18px;
+
+    box-shadow:
+      0 8px 25px rgba(40,0,8,.25);
+
+    cursor: pointer;
+
+    transition:
+      transform .3s ease,
+      box-shadow .3s ease;
+  }
+
+
+  .gif-container img:hover {
+    transform:
+      scale(1.025);
+
+    box-shadow:
+      0 10px 30px rgba(255,150,180,.25);
+  }
+
+
+  /* =====================================================
+     💓 CORAZÓN FINAL
+     ===================================================== */
+
+  .footer {
+    text-align: center;
+
+    margin-top: 35px;
+
+    font-size: 30px;
+
+    opacity: .9;
+
+    letter-spacing: 1px;
+
+    animation:
+      beatFinal 2s infinite ease-in-out;
+  }
+
+
+  @keyframes beatFinal {
+
+    0%, 100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.12);
+    }
+  }
+
+
+  /* =====================================================
+     💌 MENSAJITO SECRETO
+     ===================================================== */
+
+  .secret-message {
+    text-align: center;
+
+    margin-top: 18px;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+    opacity: .45;
+
+    letter-spacing: .3px;
+  }
+
+
+  /* =====================================================
+     💗 CORAZONES DEL CURSOR
+     ===================================================== */
+
+  .cursor-heart {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    color: #ff9fb5;
+
+    font-size: 13px;
+
+    animation:
+      cursorHeart .8s ease-out forwards;
+
+    text-shadow:
+      0 0 8px rgba(255,150,180,.5);
+  }
+
+
+  @keyframes cursorHeart {
+
+    0% {
+      opacity: .8;
+
+      transform:
+        translate(-50%, -50%)
+        scale(.7);
+    }
+
+    100% {
+      opacity: 0;
+
+      transform:
+        translate(
+          calc(-50% + var(--x)),
+          calc(-50% + var(--y))
+        )
+        scale(1.2);
+    }
+  }
+
+
+  /* =====================================================
+     💗 EASTER EGG
+     ===================================================== */
+
+  .easter-egg {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    background:
+      rgba(80, 5, 20, .18);
+
+    backdrop-filter:
+      blur(2px);
+
+    transition:
+      opacity .5s ease,
+      visibility .5s ease;
+  }
+
+
+  .easter-egg.show {
+    opacity: 1;
+
+    visibility: visible;
+  }
+
+
+  .easter-egg-text {
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+
+    font-size:
+      clamp(45px, 11vw, 130px);
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #fff7f5;
+
+    text-shadow:
+      0 0 15px rgba(255,150,180,.8),
+      0 0 40px rgba(255,100,140,.5);
+
+    transform:
+      scale(.7);
+
+    opacity: 0;
+
+    transition:
+      transform .7s cubic-bezier(.17,.67,.3,1.3),
+      opacity .5s ease;
+
+    padding: 20px;
+  }
+
+
+  .easter-egg.show .easter-egg-text {
+    transform:
+      scale(1);
+
+    opacity: 1;
+  }
+
+
+  /* 📱 CELULAR */
+
+  @media (max-width: 600px) {
+
+    body {
+      padding: 25px 13px;
+    }
+
+    .card {
+      border-radius: 22px;
+    }
+
+    .message {
+      text-align: left;
+    }
+
+    .gif-container img {
+      max-width: 240px;
+    }
+
+    .secret-message {
+      font-size: 8px;
+    }
+
+  }
+
+</style>
+
+</head>
+
+
+<body>
+
+
+  <!-- 💗 FONDO ANIMADO -->
+
+  <div
+    class="falling-container"
+    id="fallingContainer">
+  </div>
+
+
+  <!-- 💗 EASTER EGG -->
+
+  <div
+    class="easter-egg"
+    id="easterEgg">
+
+    <div class="easter-egg-text">
+      TE AMO TODO MIAMORRRRRRRRR MUAK
+    </div>
+
+  </div>
+
+
+  <!-- 💌 PÁGINA -->
+
+  <main class="page">
+
+    <section class="card">
+
+
+      <div class="little">
+        para mi empanadita de keso
+      </div>
+
+
+      <h1>
+        TE AMO
+      </h1>
+
+
+      <div class="heart">
+        ♡
+      </div>
+
+
+      <!-- 🎵 MÚSICA -->
+
+      <button
+        class="music-button"
+        onclick="reproducirMusica()"
+        id="botonMusica">
+
+        &lt;3
+
+      </button>
+
+
+      <audio id="musica" loop>
+
+        <source
+          src="musiquita.mp3"
+          type="audio/mpeg">
+
+      </audio>
+
+
+      <!-- 💌 CARTA -->
+
+      <div class="message">
+
+
+        <p>
+          Conocerte fue lo mejor que me pasó en la vida. Antes de ti no pensaba
+          que podía llegar a sentirme tan feliz de tener a alguien a mi lado.
+          Sos un sueño hecho realidad, ese deseo que tanto he anhelado y sin
+          duda sos mi mayor suerte.
+        </p>
+
+
+        <p>
+          Aún no entiendo cómo es que me has enamorado tan fácilmente, tal vez
+          habrá sido tu forma tan graciosa de ser o quizás tus ojitos tan lindos
+          que no puedo dejar de mirar, pero sea cual sea la razón, quiero que
+          sepas que estoy muy contenta de que hayas sido tú quien se ganó mi
+          corazón.
+        </p>
+
+
+        <p>
+          Me enamoré tan perdidamente de ti que sé muy seguramente que nadie
+          jamás podrá hacerme sentir lo que me haces sentir vos, y que mi
+          corazón es completamente tuyo.
+        </p>
+
+
+        <p>
+          Te amo de una forma tan sincera que no me hace falta ni verte para que
+          mi amor por ti crezca, me basta tan solo saber que existís para que
+          mis latidos se aceleren.
+        </p>
+
+
+        <p>
+          Realmente siento que no me hace falta más nada en el mundo más que tu
+          compañía, y sinceramente no quisiera estar con nadie más que vos.
+        </p>
+
+
+        <p>
+          Te amo de todo corazón, e incluso después de habértelo dicho tantas
+          veces aún siento que no es suficiente. Mi amor es mucho más grande de
+          lo que un "te amo" puede expresar.
+        </p>
+
+
+        <p>
+          Imaginá lo importante que sos para mí que el solo saber que te voy a
+          ver me hace esperar con mucha emoción un día que sin ti solo sería
+          otro más. Realmente alegrás mi vida.
+        </p>
+
+
+        <p>
+          Y me encantaría seguir aprendiendo de vos. Quiero conocer cada parte
+          de ti, incluyendo las que no te gustan tanto. Quiero descubrir todo
+          lo que sos y amar cada pequeño detalle que conforma tu persona.
+        </p>
+
+
+        <p>
+          Quiero estar con vos en todo momento, sin importar lo que esté
+          pasando. Simplemente quiero estar a tu lado.
+        </p>
+
+
+        <p>
+          Te amo hoy y siempre. Gracias por hacerme la persona más afortunada
+          del mundo al tenerte conmigo.
+        </p>
+
+
+        <div class="divider"></div>
+
+
+        <p
+          style="
+            text-align:center;
+            font-size:28px;
+            line-height:1.4;
+          ">
+
+          <strong>
+            TE AMO
+          </strong>
+
+        </p>
+
+
+        <!-- 🐱 GIF -->
+
+        <div
+          class="gif-container"
+          id="gifContainer">
+
+          <img
+            src="gatitos.gif"
+            alt="Gatitos ♡"
+            id="gatitos">
+
+        </div>
+
+
+        <div class="signature">
+          luu ♡
+        </div>
+
+
+      </div>
+
+
+      <!-- 💓 CORAZÓN FINAL -->
+
+      <div class="footer">
+        ♡
+      </div>
+
+
+      <!-- 💌 MENSAJITO SECRETO -->
+
+      <div class="secret-message">
+
+        hecho enteramente con chatyipiti porq mis conocimientos informatikos
+        no llegan ni al tamaño de un poroto, t amo mi korasonsito de melocoton
+
+      </div>
+
+
+    </section>
+
+  </main>
+
+
+<script>
+
+
+  /* =====================================================
+     🎵 MÚSICA
+     ===================================================== */
+
+  const musica =
+    document.getElementById("musica");
+
+  const botonMusica =
+    document.getElementById("botonMusica");
+
+
+  function reproducirMusica() {
+
+    if (musica.paused) {
+
+      musica.play();
+
+      botonMusica.classList.add(
+        "playing"
+      );
+
+    } else {
+
+      musica.pause();
+
+      botonMusica.classList.remove(
+        "playing"
+      );
+
+    }
+
+  }
+
+
+  musica.addEventListener(
+    "ended",
+    () => {
+
+      botonMusica.classList.remove(
+        "playing"
+      );
+
+    }
+  );
+
+
+  /* =====================================================
+     💗 CORAZONES CAYENDO
+     ===================================================== */
+
+  const container =
+    document.getElementById(
+      "fallingContainer"
+    );
+
+
+  function crearCorazon() {
+
+    const elemento =
+      document.createElement("div");
+
+
+    const corazones = [
+      "♡",
+      "♥",
+      "♡",
+      "♡",
+      "♥",
+      "♡",
+      "♡",
+      "♥"
+    ];
+
+
+    elemento.textContent =
+      corazones[
+        Math.floor(
+          Math.random() *
+          corazones.length
+        )
+      ];
+
+
+    elemento.classList.add(
+      "falling"
+    );
+
+
+    elemento.style.left =
+      Math.random() * 100 + "vw";
+
+
+    elemento.style.fontSize =
+      (10 + Math.random() * 22) + "px";
+
+
+    const duracion =
+      5 + Math.random() * 7;
+
+
+    elemento.style.animationDuration =
+      duracion + "s";
+
+
+    elemento.style.opacity =
+      0.35 + Math.random() * 0.45;
+
+
+    container.appendChild(
+      elemento
+    );
+
+
+    setTimeout(() => {
+
+      elemento.remove();
+
+    }, (duracion + 2) * 1000);
+
+  }
+
+
+  /* =====================================================
+     ✨ BRILLITOS
+     ===================================================== */
+
+  function crearBrillito() {
+
+    const elemento =
+      document.createElement("div");
+
+
+    const brillitos = [
+      "✦",
+      "✧",
+      "·",
+      "✦",
+      "⋆"
+    ];
+
+
+    elemento.textContent =
+      brillitos[
+        Math.floor(
+          Math.random() *
+          brillitos.length
+        )
+      ];
+
+
+    elemento.classList.add(
+      "sparkle"
+    );
+
+
+    elemento.style.left =
+      Math.random() * 100 + "vw";
+
+
+    elemento.style.fontSize =
+      (7 + Math.random() * 12) + "px";
+
+
+    const duracion =
+      6 + Math.random() * 8;
+
+
+    elemento.style.animationDuration =
+      duracion + "s";
+
+
+    container.appendChild(
+      elemento
+    );
+
+
+    setTimeout(() => {
+
+      elemento.remove();
+
+    }, (duracion + 2) * 1000);
+
+  }
+
+
+  setInterval(
+    crearCorazon,
+    220
+  );
+
+
+  setInterval(
+    crearBrillito,
+    900
+  );
+
+
+  for (
+    let i = 0;
+    i < 35;
+    i++
+  ) {
+
+    setTimeout(
+      crearCorazon,
+      i * 100
+    );
+
+  }
+
+
+  for (
+    let i = 0;
+    i < 10;
+    i++
+  ) {
+
+    setTimeout(
+      crearBrillito,
+      i * 300
+    );
+
+  }
+
+
+  /* =====================================================
+     🖱️ CORAZONCITOS AL MOVER EL MOUSE
+     ===================================================== */
+
+  let ultimoCorazon =
+    0;
+
+
+  document.addEventListener(
+    "mousemove",
+    function(event) {
+
+      const ahora =
+        Date.now();
+
+
+      if (
+        ahora - ultimoCorazon < 90
+      ) {
+        return;
+      }
+
+
+      ultimoCorazon =
+        ahora;
+
+
+      const corazon =
+        document.createElement("div");
+
+
+      corazon.className =
+        "cursor-heart";
+
+
+      corazon.textContent =
+        Math.random() > .5
+          ? "♡"
+          : "♥";
+
+
+      corazon.style.left =
+        event.clientX + "px";
+
+
+      corazon.style.top =
+        event.clientY + "px";
+
+
+      corazon.style.setProperty(
+        "--x",
+        (Math.random() * 40 - 20) + "px"
+      );
+
+
+      corazon.style.setProperty(
+        "--y",
+        (-25 - Math.random() * 25) + "px"
+      );
+
+
+      document.body.appendChild(
+        corazon
+      );
+
+
+      setTimeout(() => {
+
+        corazon.remove();
+
+      }, 800);
+
+    }
+  );
+
+
+  /* =====================================================
+     🐱 EASTER EGG
+     5 TOQUES AL GIF
+     ===================================================== */
+
+  const gatitos =
+    document.getElementById(
+      "gatitos"
+    );
+
+
+  const easterEgg =
+    document.getElementById(
+      "easterEgg"
+    );
+
+
+  let toques =
+    0;
+
+
+  let ultimoToque =
+    0;
+
+
+  gatitos.addEventListener(
+    "click",
+    function() {
+
+      const ahora =
+        Date.now();
+
+
+      if (
+        ahora - ultimoToque > 2000
+      ) {
+
+        toques = 0;
+
+      }
+
+
+      ultimoToque =
+        ahora;
+
+
+      toques++;
+
+
+      if (toques >= 5) {
+
+        toques = 0;
+
+
+        easterEgg.classList.add(
+          "show"
+        );
+
+
+        setTimeout(() => {
+
+          easterEgg.classList.remove(
+            "show"
+          );
+
+        }, 2800);
+
+      }
+
+    }
+  );
+
+
+</script>
+
+
+</body>
+</html>
