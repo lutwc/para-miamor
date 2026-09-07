@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Te amo ♡</title>
+
+<style>
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+
+    /* 💗 CURSOR DE CORAZÓN ROSITA */
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext x='3' y='25' font-size='24' fill='%23ff8fa3'%3E%E2%99%A5%3C/text%3E%3C/svg%3E"), auto;
+
+    background:
+      radial-gradient(circle at 15% 15%, rgba(255,255,255,.12), transparent 22%),
+      radial-gradient(circle at 85% 80%, rgba(255,180,180,.10), transparent 25%),
+      linear-gradient(135deg, #8f1d2c, #b93647 48%, #761524);
+
+    color: #fff7f5;
+    padding: 55px 20px;
+  }
+
+  .page {
+    width: min(900px, 100%);
+    margin: 0 auto;
+  }
+
+  .card {
+    background: rgba(65, 8, 18, .48);
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 28px;
+    padding: clamp(30px, 6vw, 65px);
+    box-shadow: 0 20px 60px rgba(40, 0, 8, .35);
+    backdrop-filter: blur(7px);
+  }
+
+  .little {
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: .78;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(60px, 14vw, 130px);
+    line-height: .9;
+    letter-spacing: 5px;
+    font-weight: 700;
+    text-shadow: 0 5px 25px rgba(50,0,5,.35);
+  }
+
+  .heart {
+    text-align: center;
+    font-size: 30px;
+    margin: 20px 0 30px;
+    animation: beat 1.7s infinite ease-in-out;
+  }
+
+  @keyframes beat {
+    0%, 100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.18);
+    }
+  }
+
+  /* 🎵 BOTÓN DE MÚSICA */
+
+  .music-button {
+    display: block;
+    margin: 0 auto 38px;
+
+    padding: 13px 25px;
+
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.12);
+    color: #fff7f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext x='3' y='25' font-size='24' fill='%23ff8fa3'%3E%E2%99%A5%3C/text%3E%3C/svg%3E"), pointer;
+
+    transition: .3s ease;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+  }
+
+  .music-button:hover {
+    background: rgba(255,255,255,.22);
+    transform: translateY(-2px);
+  }
+
+  .music-button:active {
+    transform: scale(.96);
+  }
+
+  .message {
+    margin: 0 auto;
+    max-width: 700px;
+
+    font-size: clamp(17px, 2.4vw, 20px);
+    line-height: 1.9;
+
+    text-align: left;
+  }
+
+  .message p {
+    margin: 0 0 25px;
+  }
+
+  .signature {
+    margin-top: 42px;
+
+    text-align: right;
+
+    font-size: 22px;
+    font-style: italic;
+  }
+
+  .divider {
+    width: 90px;
+    height: 1px;
+
+    background: rgba(255,255,255,.5);
+
+    margin: 38px auto;
+  }
+
+  /* 🐱 GIF DE GATITOS */
+
+  .gif-container {
+    text-align: center;
+    margin: 30px auto 10px;
+  }
+
+  .gif-container img {
+    display: block;
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(40,0,8,.25);
+  }
+
+  /* ♡ FINAL */
+
+  .footer {
+    text-align: center;
+
+    margin-top: 35px;
+
+    font-size: 30px;
+    opacity: .9;
+
+    letter-spacing: 1px;
+  }
+
+  /* 💌 MENSAJITO SECRETO */
+
+  .secret-message {
+    text-align: center;
+    margin-top: 18px;
+
+    font-size: 9px;
+    line-height: 1.4;
+
+    opacity: .45;
+
+    letter-spacing: .3px;
+  }
+
+  @media (max-width: 600px) {
+
+    body {
+      padding: 25px 13px;
+    }
+
+    .card {
+      border-radius: 22px;
+    }
+
+    .message {
+      text-align: left;
+    }
+
+    .gif-container img {
+      max-width: 240px;
+    }
+
+    .secret-message {
+      font-size: 8px;
+    }
+  }
+
+</style>
+
+</head>
+
+<body>
+
+  <main class="page">
+
+    <section class="card">
+
+      <div class="little">
+        para mi empanadita de keso
+      </div>
+
+      <h1>
+        TE AMO
+      </h1>
+
+      <div class="heart">
+        ♡
+      </div>
+
+
+      <!-- 🎵 MÚSICA -->
+
+      <button
+        class="music-button"
+        onclick="reproducirMusica()"
+        id="botonMusica"
+      >
+        &lt;3
+      </button>
+
+      <audio id="musica" loop>
+        <source src="musiquita.mp3" type="audio/mpeg">
+      </audio>
+
+
+      <div class="message">
+
+        <p>
+          Mau, no sé muy bien cómo empezar a decir todo esto sin que termine
+          sonando como una película romántica JAJAJA, pero quería dejarte algo
+          que pudiera guardar todas esas cosas que a veces siento y que no sé
+          cómo explicar cuando estoy frente a vos.
+        </p>
+
+        <p>
+          Te amo muchísimo. Y aunque decir esas dos palabras parezca tan simple,
+          para mí significan un montón. Significan todas las veces que pienso en
+          vos de la nada, todas las veces que algo me hace acordar a vos, todas
+          las ganas que tengo de contarte cualquier boludez que me pasa y todos
+          esos pequeños momentos que capaz para otra persona no significan
+          demasiado, pero que para mí terminan siendo recuerdos que quiero
+          guardar.
+        </p>
+
+        <p>
+          Me hace feliz tenerte en mi vida. Me encanta compartir cosas con vos,
+          hablar, reírnos, jugar, molestarnos y simplemente estar juntos. Me
+          encantan esos momentos que quizás parecen pequeños, pero que después
+          me quedo pensando y me hacen sonreír como una pelotuda.
+        </p>
+
+        <p>
+          También quiero que sepas que no hice esto porque necesitara una
+          ocasión especial. Lo hice porque quería darte algo que fuera
+          especialmente tuyo. Algo hecho por mí, con tiempo, cariño y muchas
+          ganas de hacerte feliz. La figurita, la cajita y ahora esta página
+          son simplemente mi manera medio nerd y medio cursi de decirte algo
+          que ya sabés: sos una persona muy importante para mí.
+        </p>
+
+        <p>
+          No sé qué nos espera más adelante ni cómo van a cambiar las cosas con
+          el tiempo, pero sí sé que ahora mismo te quiero muchísimo y que
+          agradezco cada momento que puedo compartir con vos. Quiero seguir
+          creando recuerdos juntos, seguir riéndome con vos y seguir teniendo
+          esas pequeñas cosas que hacen que estar a tu lado se sienta tan lindo.
+        </p>
+
+        <p>
+          Y si alguna vez dudás de cuánto te quiero, acordate de esta página,
+          de la cajita y de todo el tiempo que puse en hacerte algo solamente
+          para vos. Porque detrás de cada detalle hay una parte de mí diciendo
+          lo mismo:
+        </p>
+
+
+        <div class="divider"></div>
+
+
+        <p style="text-align:center; font-size:28px; line-height:1.4;">
+          <strong>
+            TE AMO
+          </strong>
+        </p>
+
+
+        <!-- 🐱 GIF -->
+
+        <div class="gif-container">
+          <img src="gatitos.gif" alt="Gatitos ♡">
+        </div>
+
+
+        <div class="signature">
+          luu ♡
+        </div>
+
+      </div>
+
+
+      <div class="footer">
+        ♡
+      </div>
+
+
+      <!-- 💌 MENSAJITO SECRETO DEL FINAL -->
+
+      <div class="secret-message">
+        hecho enteramente con chatyipiti porq mis conocimientos informatikos
+        no llegan ni al tamaño de un poroto, t amo mi korasonsito de melocoton
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    function reproducirMusica() {
+
+      const musica = document.getElementById("musica");
+
+      if (musica.paused) {
+        musica.play();
+      } else {
+        musica.pause();
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
